@@ -96,18 +96,19 @@ ul {
 li a {
   color: rgb(218, 218, 218);
   padding: 0 10px;
+  border-radius: 25px;
 }
 li a:hover {
-  border-radius: 15px;
   background-color: rgb(179, 179, 179);
   color: #50577a;
-  transition: all 0.35s ease;
+  
+  transition: all 0.5s ease;
 }
 
 li a:not(:hover) {
   background-color: #50577a;
   color: rgb(179, 179, 179);;
-  transition: all 0.35s ease;
+  transition: all 0.3s ease;
 }  
 
 h1 {
@@ -122,4 +123,22 @@ h1 {
   padding: 0 20px;
   max-width: 1200px;
   margin: 0 auto;
+}
+.sub-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+}
+
+.menu-item:hover .sub-menu {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  * {
+  user-select: none;
+}
+
 }
