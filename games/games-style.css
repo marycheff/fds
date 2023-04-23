@@ -1,99 +1,7 @@
-/*Обнуление*/
-* {
-  padding: 0;
-  margin: 0;
-  border: 0;
-}
-*,
-*:before,
-*:after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-:focus,
-:active {
-  outline: none;
-}
-a:focus,
-a:active {
-  outline: none;
-}
-nav,
-footer,
-header,
-aside {
-  display: block;
-}
-html,
-body {
-  height: 100%;
-  width: 100%;
-  font-size: 100%;
-  line-height: 1;
-  font-size: 14px;
-  -ms-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-}
-input,
-button,
-textarea {
-  font-family: inherit;
-}
-input::-ms-clear {
-  display: none;
-}
-button {
-  cursor: pointer;
-}
-button::-moz-focus-inner {
-  padding: 0;
-  border: 0;
-}
-a,
-a:visited {
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: none;
-}
-ul li {
-  list-style: none;
-}
-img {
-  vertical-align: top;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-size: inherit;
-  font-weight: inherit;
-} /*--------------------*/
-
-body {
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  font-size: 18px;
-  line-height: 22px;
-  color: #212121;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
+*{
   text-align: center;
 }
-h1 {
-  font-size: 30px;
-  font-weight: 800;
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-
+/* КРЕСТИКИ-НОЛИКИ */
 .tictac-board {
   color: #212121;
   display: flex;
@@ -151,10 +59,14 @@ h1 {
   opacity: 0;
   visibility: hidden;
 }
-
-.tictac-reset {
+.tictac-reset{
   opacity: 0;
-  visibility: hidden;
+  visibility: hidden; 
+}
+
+
+/* ОБЩИЕ СТИЛИ (КНОПКИ СБРОСА) */
+.tictac-reset, .dino-start {
   display: block;
   margin: auto;
   margin-top: 30px;
@@ -174,14 +86,13 @@ h1 {
   color: #4f5670;
 }
 
-.tictac-reset::before {
+.tictac-reset::before, .dino-start::before  {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
   width: 0;
-  /* border: 1px solid #404258; */
   border-radius: 15px;
   background-color: #6b728e;
   z-index: -1;
@@ -190,13 +101,15 @@ h1 {
   transition: all 220ms;
 }
 
-.tictac-reset:hover {
+.tictac-reset:hover, .dino-start:hover {
   color: #e8e8e8;
 }
 
-.tictac-reset:hover::before {
+.tictac-reset:hover::before , .dino-start:hover::before{
   width: 100%;
 }
+
+
 .rules {
   margin: auto;
   width: 50%;
@@ -207,9 +120,15 @@ h1 {
   line-height: 24px;
   background-color: #6B728E;
    color: rgb(218, 218, 218);
+  
 }
+/* ============= */
 
 /* ДИНОЗАВРИК */
+
+.dino-start{
+  margin-top: 80px;
+}
 
 .dino-game {
   width: 600px;
@@ -236,11 +155,12 @@ h1 {
 }
 
 .dino-game__points {
+  font-size: 15px;
   text-align-last: right;
 }
 
 .dino-result {
-  padding-top: 50px;
+  margin-top: 50px;
   opacity: 0;
   visibility: hidden;
   transition: all 1.7s;
@@ -248,48 +168,7 @@ h1 {
 .start {
   animation: cactusMov .85s infinite linear;
 }
-.dino-start {
-  display: block;
-  margin: auto;
-  margin-top: 150px;
-  font-size: 20px;
-  padding: 15px 25px;
-  border: unset;
-  border-radius: 15px;
-  z-index: 1;
-  background: #e8e8e8;
-  position: relative;
-  font-weight: 1000;
-  font-size: 17px;
-  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
-  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
-  transition: all 250ms;
-  overflow: hidden;
-  color: #4f5670;
-}
 
-.dino-start::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 0;
-  border-radius: 15px;
-  background-color: #6b728e;
-  z-index: -1;
-  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
-  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
-  transition: all 220ms;
-}
-
-.dino-start:hover {
-  color: #e8e8e8;
-}
-
-.dino-start:hover::before {
-  width: 100%;
-}
 @keyframes cactusMov {
   0% {
     left: 580px;
@@ -319,3 +198,38 @@ h1 {
     top: 150px;
   }
 }
+
+
+@media (max-width: 960px) {
+  .rules{
+    width: 100%;
+    font-size: 20px;
+    line-height: 25px;
+  }
+}
+
+
+@media (max-width: 480px) {
+.container {
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.tictac-board {
+  width: 375px;
+  height: 375px;
+}
+.tictac-cell{
+  width: 125px;
+  height: 125px;
+  font-size: 120px;
+  line-height: 135px;
+}
+}
+
+
