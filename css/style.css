@@ -76,6 +76,14 @@ margin-bottom: 30px;
   font-size: 20px;
   text-align: center;
 }
+.game{
+  border: none;
+  margin-bottom: 60px;
+}
+.game__title{
+  padding-bottom: 5px;
+  border-bottom: 1px solid #404258;
+}
 }
 
 
